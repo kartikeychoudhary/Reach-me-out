@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────────
+#  reach-me-out · profile config
+#  Edit this file, then `npm run build`.
+#  Values are baked into the production bundle.
+# ─────────────────────────────────────────────
+
+profile:
+  name: "Kartikey Choudhary"
+  title: "Designer & Full-Stack Developer"
+  bio: "Building beautiful things on the internet. Always open to new collaborations and exciting projects."
+  avatar: ""           # path under public/ (e.g. "avatar.jpg") — leave blank for initials
+  phone: "+919671416759"
+  email: "kartikey31choudhary@gmail.com"
+  website: "https://kartikeychoudhary.com/"
+  location: "Pune, IN"
+
+# ─── Theme ────────────────────────────────────
+theme:
+  mode: dark           # dark | light   (initial; user can toggle at runtime)
+  background: mesh     # mesh | gradient | solid | noise
+  primary: "#6366f1"   # indigo — main accent (buttons, rings, highlights)
+  accent: "#a855f7"    # violet — secondary accent (gradient pair)
+  radius: 16           # link button border-radius in px
+  blur: true           # glassmorphism blur on cards
+
+# ─── Links ────────────────────────────────────
+# icon:  any Font Awesome 6 class string
+# color: icon + button accent color (optional — falls back to primary)
+# badge: short text badge on the right (optional)
+# enabled: false hides the link without deleting it
+
+links:
+  - label: "Call Me"
+    url: "tel:+919671416759"
+    icon: "fa-solid fa-phone"
+    color: "#22c55e"
+
+  - label: "WhatsApp"
+    url: "https://wa.me/919671416759"
+    icon: "fa-brands fa-whatsapp"
+    color: "#25D366"
+
+  - label: "Send an Email"
+    url: "mailto:kartikey31choudhary@gmail.com"
+    icon: "fa-solid fa-envelope"
+    color: "#f59e0b"
+
+  - label: "Instagram"
+    url: "https://www.instagram.com/kartikey31choudhary/"
+    icon: "fa-brands fa-instagram"
+    color: "#e1306c"
+
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/kartikeychoudhary/"
+    icon: "fa-brands fa-linkedin-in"
+    color: "#0A66C2"
+    badge: "Open to work"
+
+  - label: "GitHub"
+    url: "https://github.com/kartikeychoudhary"
+    icon: "fa-brands fa-github"
+    color: "#c9d1d9"
+
+  - label: "Portfolio"
+    url: "https://kartikeychoudhary.com/"
+    icon: "fa-solid fa-globe"
+    color: "#60a5fa"
+
+  - label: "X / Twitter"
+    url: "https://x.com/username"
+    icon: "fa-brands fa-x-twitter"
+    color: "#ffffff"
+    enabled: false
+
+  - label: "Buy Me a Coffee"
+    url: "https://buymeacoffee.com/username"
+    icon: "fa-solid fa-mug-hot"
+    color: "#FFDD00"
+    enabled: false
+
+  - label: "YouTube"
+    url: "https://youtube.com/@username"
+    icon: "fa-brands fa-youtube"
+    color: "#FF0000"
+    enabled: false
+
+  - label: "Telegram"
+    url: "https://t.me/username"
+    icon: "fa-brands fa-telegram"
+    color: "#26A5E4"
+    enabled: false
