@@ -54,7 +54,6 @@ links:
     url: "https://www.linkedin.com/in/kartikeychoudhary/"
     icon: "fa-brands fa-linkedin-in"
     color: "#0A66C2"
-    badge: "Open to work"
 
   - label: "GitHub"
     url: "https://github.com/kartikeychoudhary"
