@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import config from '../config.yaml';
+import bakedConfig from '../config.yaml';
 import Background from './components/Background.jsx';
 import ProfileCard from './components/ProfileCard.jsx';
 import LinkList from './components/LinkList.jsx';
@@ -9,6 +9,7 @@ import Footer from './components/Footer.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx';
 import { useToast } from './hooks/useToast.js';
 import { applyThemeToDocument, setMode } from './utils/theme.js';
+import { loadRuntimeConfig } from './utils/loadRuntimeConfig.js';
 
 const STORAGE_KEY = 'reach-me-out:mode';
 
@@ -21,6 +22,7 @@ function initialMode(configMode) {
 }
 
 export default function App() {
+  const [config, setConfig] = useState(bakedConfig);
   const profile = config.profile || {};
   const theme = config.theme || {};
   const links = config.links || [];
@@ -29,7 +31,21 @@ export default function App() {
   const [qrOpen, setQrOpen] = useState(false);
   const { toast, show } = useToast();
 
-  // apply theme tokens once (mode handled separately so toggle is instant)
+  // try runtime config (Docker-mounted /config.yaml); falls back to baked
+  useEffect(() => {
+    let cancelled = false;
+    loadRuntimeConfig().then((runtime) => {
+      if (cancelled || !runtime) return;
+      setConfig(runtime);
+      applyThemeToDocument({ ...(runtime.theme || {}), mode });
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // apply baked theme tokens on first paint (mode handled separately)
   useEffect(() => {
     applyThemeToDocument({ ...theme, mode });
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────
+#  reach-me-out · DEFAULT Docker config
+#  Used when no user config.yaml is mounted
+#  into /usr/share/nginx/html/config.yaml.
+# ─────────────────────────────────────────────
+
+profile:
+  name: "John Doe"
+  title: "Your Title Goes Here"
+  bio: "This is the default config shipped with the reach-me-out Docker image. Mount your own config.yaml to /usr/share/nginx/html/config.yaml to override it."
+  avatar: ""
+  phone: "+10000000000"
+  email: "john.doe@example.com"
+  website: "https://example.com"
+  location: "Anywhere, Earth"
+
+theme:
+  mode: dark
+  background: mesh
+  primary: "#6366f1"
+  accent: "#a855f7"
+  radius: 16
+  blur: true
+
+links:
+  - label: "Call Me"
+    url: "tel:+10000000000"
+    icon: "fa-solid fa-phone"
+    color: "#22c55e"
+
+  - label: "Send an Email"
+    url: "mailto:john.doe@example.com"
+    icon: "fa-solid fa-envelope"
+    color: "#f59e0b"
+
+  - label: "GitHub"
+    url: "https://github.com/johndoe"
+    icon: "fa-brands fa-github"
+    color: "#c9d1d9"
+
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/johndoe/"
+    icon: "fa-brands fa-linkedin-in"
+    color: "#0A66C2"
+
+  - label: "Portfolio"
+    url: "https://example.com"
+    icon: "fa-solid fa-globe"
+    color: "#60a5fa"
+
+  - label: "Documentation"
+    url: "https://github.com/kartikeychoudhary/Reach-me-out"
+    icon: "fa-solid fa-book"
+    badge: "Edit config.yaml"
